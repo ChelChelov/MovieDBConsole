@@ -142,3 +142,57 @@ for(let i = 0; i <= 6; i++){
 	result += '\n';
 }
 console.log(result);
+
+//Functions
+
+function sayHello(name) {
+	return name;
+}
+
+function returnNeighboringNumbers(number) {
+	number = number - 1;
+	const arr = [];
+	for (let i = 0; i <= 2; i++) {
+		arr[i] = number;
+		number++;
+	}
+	return arr;
+}
+console.log(returnNeighboringNumbers(5));
+
+function getMathResult(num, count) {
+	if (typeof(count) !== 'number' || count <= 1) {
+		return num;
+	} 
+
+	let str = num;
+	let a = num;
+
+	for (let i = 2; i <= count; i++) {
+		a = num * i;
+		str = str + '---' + a;
+	}
+	return str;
+}
+
+console.log(getMathResult(3, 6)); 
+
+// console.log( NaN || 2 || undefined );
+// console.log( NaN && 2 && undefined );
+// console.log( 1 && 2 && 3 );
+// console.log( !1 && 2 || !3 );
+// console.log( 25 || null && !3 );
+// console.log( NaN || null || !3 || undefined || 5);
+// console.log( NaN || null && !3 && undefined || 5);
+// console.log( 5 === 5 && 3 > 1 || 5);
+
+const str = 'test';
+
+str[2] = 'd';
+console.log(str);
+
+const fruit = 'some fruit';
+console.log(fruit.slice(5, 8));
+
+const test = '12.2px';
+console.log(parseFloat(test));
