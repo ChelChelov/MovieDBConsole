@@ -224,3 +224,33 @@ function getCoupeNumber(num) {
 }
 
 console.log(getCoupeNumber(16));
+
+
+function getTimeFromMinutes(time) {
+	if (typeof time !== 'number' || time < 0 || time > 600 || Math.floor(time) !== time) {
+		return 'Ошибка, проверьте данные';
+	}
+
+	let hours = parseInt(time / 60);
+	let minutes = time - 60 * hours;
+
+	switch (hours) {
+        case 1:
+            return `Это ${hours} час и ${minutes} минут`;
+        case 2:
+        case 3:
+        case 4:
+            return `Это ${hours} часа и ${minutes} минут`;
+        case 5:
+        case 6:
+        case 7:
+        case 8:
+        case 9:
+        case 10:
+            return `Это ${hours} часов и ${minutes} минут`;
+        default:
+            return `Это ${hours} часов и ${minutes} минут`;
+    }
+}
+
+console.log(getTimeFromMinutes(1));
