@@ -196,3 +196,18 @@ console.log(fruit.slice(5, 8));
 
 const test = '12.2px';
 console.log(parseFloat(test));
+
+
+
+function calculateVolumeAndArea(edgeLength) {
+	const length = parseFloat(edgeLength);
+	if (length === 'NaN' || length <= 0 || Math.floor(length) !== length) {
+		return  'При вычислении произошла ошибка';
+	}
+	const volume = length * length * length;
+	const area = 6 * length * length;
+
+	return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
+}
+
+console.log(calculateVolumeAndArea('5'));
