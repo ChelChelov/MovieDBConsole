@@ -177,15 +177,6 @@ function getMathResult(num, count) {
 
 console.log(getMathResult(3, 6)); 
 
-// console.log( NaN || 2 || undefined );
-// console.log( NaN && 2 && undefined );
-// console.log( 1 && 2 && 3 );
-// console.log( !1 && 2 || !3 );
-// console.log( 25 || null && !3 );
-// console.log( NaN || null || !3 || undefined || 5);
-// console.log( NaN || null && !3 && undefined || 5);
-// console.log( 5 === 5 && 3 > 1 || 5);
-
 const str = 'test';
 
 str[2] = 'd';
@@ -196,7 +187,6 @@ console.log(fruit.slice(5, 8));
 
 const test = '12.2px';
 console.log(parseFloat(test));
-
 
 
 function calculateVolumeAndArea(edgeLength) {
@@ -210,4 +200,27 @@ function calculateVolumeAndArea(edgeLength) {
 	return `Объем куба: ${volume}, площадь всей поверхности: ${area}`;
 }
 
-console.log(calculateVolumeAndArea('5'));
+console.log(calculateVolumeAndArea(15.5));
+
+function getCoupeNumber(num) {
+	if (typeof num !== 'number' || num < 0 || Math.floor(num) !== num) {
+		return 'Ошибка. Проверьте правильность введенного номера места';
+	} else if (num === 0 || num > 36) {
+		return 'Таких мест в вагоне не существует';
+	} else {
+		let coupe = 1;
+		let numbers = 4;
+		for (let i = 1; i <= 36; i++) {
+			if (num <= numbers) {
+				return coupe;
+			} 
+			if (i > numbers) {
+				numbers = numbers + 4;
+				coupe++;
+			}
+		}
+		return coupe;
+	}
+}
+
+console.log(getCoupeNumber(16));
