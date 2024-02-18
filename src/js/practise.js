@@ -271,3 +271,36 @@ function findMaxNumber(a, b, c, d) {
 }
 
 console.log(findMaxNumber(111, 77, 66.6, 11));
+
+
+function fib(num) {
+	if (typeof num !== 'number' || num === null || num <= 0 || Math.floor(num) !== num) {
+		return '';
+	}
+	if (num === 1) {
+		return '0';
+	}
+	if (num === 2) {
+		return '1';
+	}
+	let str = '0 1';
+	let a = 0;
+	let b = 1;
+	let res;
+	for(let i = 1; i <= num - 2; i++) {
+		res = a + b;
+		b = res;
+		a = res - a;
+		str += ` ${res}`;
+	}
+    return str;
+}
+
+console.log(fib(7));
+
+// 0 + 1 = 1; b = 1 a = 1  	0 1 1
+// 1 + 1 = 2; b = 2 a = 1  	0 1 1 2            
+// 1 + 2 = 3; b = 3 a = 2  	0 1 1 2 3
+// 2 + 3 = 5; b = 5 a = 3		0 1 1 2 3 5
+// 3 + 5 = 8; b = 8 a = 5  	0 1 1 2 3 5 8
+// 5 + 8 = 13; b = 13 a = 8    0 1 1 2 3 5 8 13
