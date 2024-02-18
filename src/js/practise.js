@@ -253,4 +253,21 @@ function getTimeFromMinutes(time) {
     }
 }
 
-console.log(getTimeFromMinutes(1));
+console.log(getTimeFromMinutes(150));
+
+
+function findMaxNumber(a, b, c, d) {
+	let max = a;
+	const arr = [a, b, c, d];
+	for (let i = 0; i <= arr.length - 1; i++) {
+		if (typeof arr[i] !== 'number' || arr[i] === null || arr[i] === '') {
+			return 0;
+		}
+		if (arr[i] >= max) {
+			max = arr[i];
+		}
+	}
+	return max;
+}
+
+console.log(findMaxNumber(111, 77, 66.6, 11));
