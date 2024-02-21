@@ -145,10 +145,6 @@ console.log(result);
 
 //Functions
 
-function sayHello(name) {
-	return name;
-}
-
 function returnNeighboringNumbers(number) {
 	number = number - 1;
 	const arr = [];
@@ -280,9 +276,6 @@ function fib(num) {
 	if (num === 1) {
 		return '0';
 	}
-	if (num === 2) {
-		return '1';
-	}
 	let str = '0 1';
 	let a = 0;
 	let b = 1;
@@ -296,7 +289,7 @@ function fib(num) {
     return str;
 }
 
-console.log(fib(7));
+console.log(fib(2));
 
 // 0 + 1 = 1; b = 1 a = 1  	0 1 1
 // 1 + 1 = 2; b = 2 a = 1  	0 1 1 2            
