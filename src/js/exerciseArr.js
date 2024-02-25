@@ -59,5 +59,4 @@ function availableCurr(arr, missingCurr) {
 	return str;
 }
 
-
 console.log(availableCurr([...additionalCurrencies, ...baseCurrencies], 'usd'.toUpperCase()));
