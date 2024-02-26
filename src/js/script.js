@@ -40,13 +40,15 @@ const personalMovieDB = {
 	},
 	writeYourGenres: function () {
 		for (let i = 0; i <= 2; i++) {
-			personalMovieDB.genres[i] = prompt(`What is your favourite genre by number ${i + 1}`);
-			if (personalMovieDB.genres[i] === '' || personalMovieDB.genres[i] === null) {
-				personalMovieDB.genres[i] = prompt(`What is your favourite genre by number ${i + 1}`);
+			let genre = prompt(`What is your favourite genre by number ${i + 1}`).toLowerCase();
+			if (genre === '' || genre === null) {
+				console.log('Your input is incorrect');
 				i--;
+			} else {
+				personalMovieDB.genres[i] = genre;
 			}
 		}
-		personalMovieDB.genres.forEach (function (item, i) {
+		personalMovieDB.genres.forEach ((item, i) => {
 			console.log(`Favourite genre #${i + 1} is ${item}`);
 		});
 	},
