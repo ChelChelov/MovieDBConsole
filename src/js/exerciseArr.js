@@ -60,3 +60,92 @@ function availableCurr(arr, missingCurr) {
 }
 
 console.log(availableCurr([...additionalCurrencies, ...baseCurrencies], 'usd'.toUpperCase()));
+
+//Shopping Mall
+
+const shoppingMallData = {
+    shops: [
+        {
+            width: 10,
+            length: 5
+        },
+        {
+            width: 15,
+            length: 7
+        },
+        {
+            width: 20,
+            length: 5
+        },
+        {
+            width: 8,
+            length: 10
+        }
+    ],
+    height: 5,
+    moneyPer1m3: 30,
+    budget: 55000
+};
+
+function isBudgetEnough(data) {
+	let S = 0;
+
+	data.shops.forEach((shop) => {
+		S += shop.width * shop.length;
+	});
+
+	const V = S * data.height;
+	const price = V * data.moneyPer1m3;
+	
+	if (data.budget - price >= 0) {
+		return 'Бюджета достаточно';
+	} else {
+		return 'Бюджета недостаточно';
+	}
+}
+
+console.log(isBudgetEnough(shoppingMallData));
+
+
+//Students
+
+const students = ['Peter', 'Andrew', 'Ann', 'Mark', 'Josh', 'Sandra', 'Cris', 'Bernard', 'Takesi', 'Sam', 'Sam', 'Takesi'];
+
+function sortStudentsByGroups(arr) {
+	let str = 'Оставшиеся студенты: ';
+    let groups = [[], [], [], str]; 
+    arr = arr.sort();
+
+    for (let i = 0, counter = 0; i < arr.length; i++) {
+		if (arr.length == 9 && i == 8) {
+			groups[3] += '-';
+		}
+		if (i >= 9) {
+			groups[3] += `${arr[i]}`;
+			if (i < arr.length - 1) {
+				groups[3] += ', ';
+			}
+		}
+        if (i <= 8) {
+			groups[counter].push(arr[i]);
+		}
+        if (groups[counter].length === 3 && counter < 2) {
+            counter++;
+        }
+    }
+
+    return groups;
+}
+
+console.log(sortStudentsByGroups(students));
+
+
+// let groups = [[], [], [], ''];
+
+// let count = 0;
+
+// groups[count].push(students[0]);
+
+// students.push('Peter');
+
+// console.log(groups);
