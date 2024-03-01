@@ -39,4 +39,49 @@ const arr = [1, 2, 3, 6, 8];
 
 arr.forEach(function() {});
 
+console.log(typeof(+null));
 
+
+
+function createCounter() {
+	let counter = 0;
+
+	const myFunction = function() {
+		counter = counter + 1;
+		return counter;
+	};
+
+	return myFunction;
+}
+
+const increment = createCounter();
+const increment2 = createCounter();
+
+// const c1 = increment();
+// const c2 = increment();
+// const c3 = increment();
+
+// console.log(c1, c2, c3);
+
+console.log(createCounter());
+console.log(increment, increment2);
+console.log(increment(), increment2(), increment());
+
+// const c1 = createCounter();
+// const c2 = createCounter();
+// const c3 = createCounter();
+
+// console.log(c1(), c2(), c3());
+// console.log(c1(), c2(), c3());
+
+
+
+
+let user = {
+    name1: 'Alex',
+    age: 25
+};
+// const {name1, age} = user;
+
+user.name1 = 'Oleg';
+console.log(user.name1);
