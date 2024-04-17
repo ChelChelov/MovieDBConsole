@@ -39,13 +39,13 @@ const personalMovieDB = {
 		}
 	},
 	writeYourGenres: function () {
-		for (let i = 0; i <= 2; i++) {
-			let genre = prompt(`What is your favourite genre by number ${i + 1}`).toLowerCase();
+		for (let i = 1; i <= 3; i++) {
+			let genre = prompt(`What is your favourite genre by number ${i}`).toLowerCase();
 			if (genre === '' || genre === null) {
 				console.log('Your input is incorrect');
 				i--;
 			} else {
-				personalMovieDB.genres[i] = genre;
+				personalMovieDB.genres[i - 1] = genre;
 			}
 		}
 		personalMovieDB.genres.forEach ((item, i) => {
@@ -69,7 +69,6 @@ const personalMovieDB = {
 personalMovieDB.start();
 personalMovieDB.rememberMyMovies();
 personalMovieDB.countOfMovies();	
-// personalMovieDB.toggleVisibleMyDB();
 // personalMovieDB.toggleVisibleMyDB();
 personalMovieDB.showMyDB(personalMovieDB.privat);
 personalMovieDB.writeYourGenres();
