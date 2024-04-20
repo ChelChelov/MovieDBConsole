@@ -12,13 +12,13 @@ const options = {
 
 options['weight'] = 50;
 
-// console.log(options.weight);
+console.log(options.weight);
 
-// for (let key in options) {
-// 	console.log(`Property ${key} is ${options[key]}`);
-// }
+for (let key in options) {
+	console.log(`Property ${key} is ${options[key]}`);
+}
 
-// console.log(Object.keys(options).length);
+console.log(Object.keys(options).length);
 
 options['makeTest'] = function() {
 	console.log('Test');
@@ -85,3 +85,5 @@ let user = {
 
 user.name1 = 'Oleg';
 console.log(user.name1);
+
+
