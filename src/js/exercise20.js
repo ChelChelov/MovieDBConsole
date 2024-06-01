@@ -44,4 +44,7 @@ function checkFilms(arr) {
     return arr.every(film => 'id' in film);
 }
 
-console.log(setFilmsIds(films));
+console.log(showGoodFilms(films));
+console.log(showListOfFilms(films));
+console.log(checkFilms(films));
+console.log(tranformedArray);
